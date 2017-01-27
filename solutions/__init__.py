@@ -1,1 +1,1 @@
-import save_the_prisoner
+import beautiful_triplets
