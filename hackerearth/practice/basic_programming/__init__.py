@@ -1,1 +1,1 @@
-import count_divisors
+import magical_word
