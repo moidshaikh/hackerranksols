@@ -45,16 +45,14 @@
 
 pr = [61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127]
 
-
 def nearestPrime(n):
 
     for i in range(len(pr)-1):
         if (n == pr[i]):
-            print("rftgyhuj")
-            return pr[i+1]
+            return i+1
         else:
             if (n in range(pr[i],pr[i+1])):
-                if(abs(n-pr[i]) < abs(n-pr[i+1])):
+                if(abs(n-pr[i]) <= abs(n-pr[i+1])):
                     if (pr[i] == 61):
                         return pr[i+1]
                     return(pr[i])
