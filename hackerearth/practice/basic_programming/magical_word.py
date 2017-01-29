@@ -14,7 +14,6 @@ def magical_words():
         output.append(chr(c))
     print(''.join(output))
 
-
 test_cases = int(input())
 
 while test_cases != 0:
