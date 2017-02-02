@@ -1,1 +1,1 @@
-import jarvis_seven_segments
+import union_of_rectangles
