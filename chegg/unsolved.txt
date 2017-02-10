@@ -1,0 +1,28 @@
+Unsolved Problems::
+
+------------------------------------------------------------------------------------------------------------------
+The purpose of this assignment is to process rat exam data and calculate a ratIQ for each rat. 
+Input: The user will be put the data for the rats in a text file named "test.txt" 
+(here is an example that you can use). 
+The first line of the input file will be the number of rats who took the test. 
+Each line after that will contain a name (string) a number of correct test answers (int) 
+and the number of seconds it took to take the exam (int). Each piece of data will be separated by one blank space.
+For example: 
+4 George 24 34 Jane 24 17 Joan 30 32 Phil 25 29 
+
+Processing: 
+First the program will read in the number of tests. 
+Then for each test the program will read in the name and calculate the rat's IQ score using the following criteria.
+The rat gets 10 points for each correct answer and an additional 
+5 points, if he/she took less than 30 seconds to complete the exam. 
+
+For the data above, George would have a ratIQ of 240 and Jane would have a ratIQ of 245. 
+
+Output: 
+The program will print one line of output for each rat that contains the rat's name and ratIQ score.
+For the above input, the output could look like this: 
+George has a ratIQ of 240. 
+Jane has a ratIQ of 245. 
+Joan has a ratIQ of 300. 
+Phil has a ratIQ of 255.
+------------------------------------------------------------------------------------------------------------------
