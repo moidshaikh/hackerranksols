@@ -1,0 +1,250 @@
+HackerEarth Zauba Hiring Challenge
+shaikhamoid777@gmail.com
+00 : 37 : 52 left
+Help
+End Test
+3 QuestionsTotal Marks: 300.0
+2 Programming Questions
+1.
+Lexical Sorting Reloaded
++ 100.0
+2.
+Divisor Queries.
++ 100.0
+1 Approximate Question
+3.
+Matrix sum
++ 100.0
+Question3Max. Marks 100.00
+Matrix sum
+Assume that you are given an
+N
+∗
+N
+N∗N matrix
+A
+A and an integer
+K
+K. You are required to find the top left and bottom right co-ordinates of the smallest square sub-matrix of
+A
+A such that the sum of all the elements in the square sub-matrix is
+≥
+K
+≥K
+
+A sub-matrix of the original matrix having co-ordinates
+(
+x
+1
+,
+y
+1
+)
+(x1,y1),
+(
+x
+2
+,
+y
+2
+)
+(x2,y2) is considered to be a square sub-matrix if
+|
+x
+1
+−
+x
+2
+|
+>=
+0
+|x1−x2|>=0 and
+x
+2
+−
+x
+1
+x2−x1 =
+y
+2
+−
+y
+1
+y2−y1.
+
+All elements
+(
+i
+,
+j
+)
+(i,j), where
+x
+1
+≤
+i
+≤
+x
+2
+x1≤i≤x2, and
+y
+1
+≤
+j
+≤
+y
+2
+y1≤j≤y2 are considered to be a part of the square
+(
+x
+1
+,
+y
+1
+)
+(x1,y1),
+(
+x
+2
+,
+y
+2
+)
+(x2,y2)
+
+Input
+
+First line comprises two space-separated integers
+N
+N and
+K
+K
+Each of the next
+N
+N lines contains
+N
+N space separated integers. where the
+j
+t
+h
+jth integer on the
+i
+t
+h
+ith line denotes
+A
+[
+i
+]
+[
+j
+]
+A[i][j].
+
+Output :
+
+If there exists a matrix satisfying the above conditions, then on the first line print "YES" (without quotes). On the next line, Print four space-separated integers
+x
+1
+x1,
+y
+1
+y1,
+x
+2
+x2, and
+y
+2
+y2, which denote the top left and bottom right positions of the largest square sub-matrix of
+A
+A such that the sum of all the elements in the square sub-matrix is
+≥
+≥ to
+K
+K. If there are multiple answers, print any one answer.
+
+If there is no such square sub-matrix, then print "NO" without quotes.
+
+Constraints
+
+1
+≤
+N
+≤
+250
+1≤N≤250
+
+0
+≤
+A
+[
+i
+]
+[
+j
+]
+≤
+10
+9
+0≤A[i][j]≤109
+
+1
+≤
+K
+≤
+10
+15
+1≤K≤1015
+Sample Input
+3 12
+11 1 0
+1 11 0
+0 0 0
+Sample Output
+YES
+1 1 2 2
+Explanation
+The square matrix having top right co-ordinates
+(
+1
+,
+1
+)
+(1,1) and bottom right co-ordinates
+(
+2
+,
+2
+)
+(2,2) has sum equal to
+11
++
+1
++
+1
++
+11
+≥
+12
+11+1+1+11≥12. The side length of this square is
+2
+2, and no smaller square sub-matrix has sum
+≥
+K
+≥K
+Time Limit: 2.0 sec(s) for each input file
+Memory Limit: 256 MB
+Source Limit: 1024 KB
+Marking Scheme: Marks are awarded if any testcase passes
+Allowed Languages: C, C++, Clojure, C#, D, Erlang, F#, Go, Groovy, Haskell, Java, Java 8, JavaScript(Rhino), JavaScript(Node.js), Lisp, Lisp (SBCL), Lua, Objective-C, OCaml, Octave, Pascal, Perl, PHP, Python, Python 3, R(RScript), Racket, Ruby, Rust, Scala, Scala 2.11.8, Swift, Visual Basic
+New SubmissionAll Submissions
+Save
+
+
+1
+Loading...
+1:1
+ Press Ctrl-space for autocomplete suggestions.
+ Provide custom input
+COMPILE & TEST SUBMIT
+

@@ -1,0 +1,100 @@
+HackerEarth Zauba Hiring Challenge
+shaikhamoid777@gmail.com
+00 : 36 : 32 left
+Help
+End Test
+3 QuestionsTotal Marks: 300.0
+2 Programming Questions
+1.
+Lexical Sorting Reloaded
++ 100.0
+2.
+Divisor Queries.
++ 100.0
+1 Approximate Question
+3.
+Matrix sum
++ 100.0
+Question1Max. Marks 100.00
+Lexical Sorting Reloaded
+Little Ravi is designing an application but has got some problems. His application should keep the input strings in lexicographical order which isn't working properly.
+
+Please help Little Ravi in completing his application. Ravi has N strings which will be given to you that are to be arranged in lexicographical order.
+
+The strings have both capital and small letters. In general, their is no priority when strings do not spell the same. But if the strings spell same, small letter is considered having higher priority over capital letters.
+
+A string may contain multiple words. Also a space is of higher priority over any alphabets.
+
+Refer sample test cases for proper understanding.
+
+Input :
+First line has number of test cases.
+First line of each test case has N(Number of strings Little Ravi has).
+Next N lines has a string in each line.
+It is guaranteed that string doesn't start or end with a space.
+
+Output :
+For each test case, print N lines with a string in each line in order as described.
+
+Constraints :
+1 ≤ T ≤ 1000
+1 ≤ N ≤ 1000
+1 ≤ |S| ≤ 1000, |S| means length of string.
+Sum of length of strings over all test cases in an input file wouldn't exceed 107
+
+Sample Input
+4
+3
+fuNny
+funny
+fun
+5
+All
+hall
+Fall
+ball
+Call
+2
+hello world
+World Hello
+5
+HellO
+hello
+HEllo
+hellO
+Hello
+
+Sample Output
+fun
+funny
+fuNny
+All
+ball
+Call
+Fall
+hall
+hello world
+World Hello
+hello
+hellO
+Hello
+HellO
+HEllo
+Time Limit: 1.0 sec(s) for each input file
+Memory Limit: 256 MB
+Source Limit: 1024 KB
+Marking Scheme: Marks are awarded if any testcase passes
+Allowed Languages: C, C++, Clojure, C#, D, Erlang, F#, Go, Groovy, Haskell, Java, Java 8, JavaScript(Rhino), JavaScript(Node.js), Lisp, Lisp (SBCL), Lua, Objective-C, OCaml, Octave, Pascal, Perl, PHP, Python, Python 3, R(RScript), Racket, Ruby, Rust, Scala, Scala 2.11.8, Swift, Visual Basic
+New SubmissionAll Submissions
+Save
+
+
+1
+2
+print("Hello World!")
+2:1
+ Press Ctrl-space for autocomplete suggestions.
+ Provide custom input
+COMPILE & TEST SUBMIT
+Next Question
+
