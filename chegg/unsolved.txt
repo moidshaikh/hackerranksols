@@ -39,4 +39,211 @@ Once the last acknowledgement has been sent, the server closes all ports and ter
 client file name should be "client" and takes command line inputs <server address>,<n_port>,and <file_name>.
 server file name should be server and takes command line inputs <n_port>.
 ------------------------------------------------------------------------------------------------------------------
+In C++:
+Write a windows console application in C++ that simulates an Automated Teller Machine (ATM) menu similar to the following (this program assumes you are uniquely logged in).
+
+     Welcome to the DeVry Bank Automated Teller Machine
+
+Check balance
+Make withdrawal
+Make deposit
+View account information
+View statement
+View bank information
+Exit
+
+
+     The result of choosing #1 will be the following:
+          Current balance is: $2439.45
+
+     The result of choosing #2 will be the following:
+          How much would you like to withdraw? $200.50
+
+     The result of choosing #3 will be the following:
+          How much would you like to deposit? $177.32
+
+     The result of choosing #4 will be the following:
+          Name: (Student’s first and last name goes here)
+          Account Number: 1234554321
+
+     The result of choosing #5 will be the following:
+          01/01/11 - McDonald’s - $6.27
+          01/15/11 - Kwik Trip - $34.93
+          02/28/11 - Target - $124.21
+
+     The result of choosing #6 will be the following:
+          Devry Bank, established 2011
+          (123) 456-7890
+          12345 1st St.
+          Someplace, NJ 12345
+
+     The result of choosing #7 will be the following:
+          *Exit the program - terminate console application.
+
+
+
+Step 2: Processing Logic
+
+You will create a Menu Builder class (for menu applications), a Test Menu class (for Main), and a MenuBuilder.h for a total of three files as a demonstration of understanding, creating, and using classes.
+
+Using the pseudocode below, write the code that will meet the requirements.
+
+Create a Test Menu class
+      For main method and to call the Menu Driven class
+
+Create a MenuBuilder Class
+         This will be where you create statements for the following:
+1. Check balance
+2. Make withdrawal
+3. Make deposit
+4. View account information
+5. View statement
+6. View bank information
+7. Exit
+Create a MenuBuilder.h
+Include a header file in your program.
+This will be where you utilize standardized Identifiers,
+preprocessor directives, classes, namespaces, and so forth.
+------------------------------------------------------------------------------------------------------------------
+Game theory problem
+
+This is a Game Theory question.
+A legislative committee must decide whether to propose a bill to congress. The committee may propose a strong bill, a weak bill or no bill. Once a bill is proposed congress may pass the bill as written, amend and pass the bill, (strong bills become weak and weak bills become strong), or withhold a vote and maintain the status quo.
+The committee and congress receive the following utility payouts.
+Committee:                   Congress:
+Strong bill         0                                  1
+Weak bill          1                                  x
+Status quo        x                                  0
+
+However, the committee is uncertain about congress’s actual preferences and believes that with probability p congress’s preferences are exactly the same as its own. Otherwise congresse's preferences will be the same as listed above.
+Draw and solve a game tree incorporating the committee’s uncertainty about congress’s preferences. The committee moves first. Assume that x and p can take any value between 0 and 1. Your solution to the game will depend on p and x.
+
+------------------------------------------------------------------------------------------------------------------
+Create a regular expression for the language consisting of the set of strings over Σ = {0, 1} such that each string in the language either (a) has a sequence of 5 consecutive 0s or (b) has a sequence of an odd number of consecutive 1s followed at some point by a sequence of an even number of consecutive 1s. Thus 00000, 000000, 11100000, 111, and 10011 would be in the language, but 110000 would not.
+------------------------------------------------------------------------------------------------------------------
+Java question
+
+Can someone help me with the following program
+
+Class design
+Here are three Cryptography methods – Caesar, Transposition and Reverser. They all have something in common. They encrypt and decrypt messages. That is, they take a string of words and translate each word using the encoding algorithm appropriate for that cipher. Thus each class cipher will need polymorphic encode() and decode() methods, which take a word and encodes and decodes it according to the rule of the particular cipher.
+From a design perspective, the encrypt() method and the decrypt() methods will be the same for every class. They simply break message into words and have each word encode or decode. However, the encode and decode methods will be different for each cipher. Figure 1 shows a hierarchy of the classes.
+
+
+ From the above analysis a partial abstract class Cipher is depicted be by Listing 1.
+
+import java.util.StringTokenizer;
+public abstract class Cipher {
+private String message;
+StringBuffer encrypted_message, decrypted_message;
+public Cipher(String text)
+{
+// Complete the constructor definition
+}
+public final void encrypt() {
+/* The message string is tokenized into individual words,
+* and each word is encoded by calling the encode method */
+encrypted_message = new StringBuffer(); StringTokenizer words = new StringTokenizer(message);
+while(words.hasMoreTokens()) {
+String s = words.nextToken(); s = encode(s) + " "; encrypted_message.append(s);
+} }
+public final void decrypt(String message) {
+/* The encoded message string is tokenized into individual words, * and each word is encoded by calling the decode method
+*/
+// Supply the code that will decrypt the encrypted string }
+public String getEncodedMessage() {
+return encrypted_message.toString(); }
+public String getDecodedMessage()
+{
+return decrypted_message.toString();
+}
+public abstract String encode(String s);
+public abstract String decode(String s); }
+Listing 1. Abstract class Cipher
+
+
+The class Caesar inherits the abstract class Cipher. This class defines the methods code and decode. The method encode takes a String parameter and returns a String result. It takes each character of the parameter and performs a Caesar shift on the character. That is, a shift with possible wrap around can be coded as follows:
+
+char ch = word.charAt(i);
+ch = (char)(‘a’ + ch – ‘a’ + 3) % 26);
+
+The method decode does the reverse. Listing 2 shows a partial definition of this class - Caesar
+
+public class Caeser extends Cipher {
+public Caeser(String s) {
+super(s); }
+public String encode(String word) {
+}
+return code(word,Constants.ENCODE_SHIFT );
+public String decode(String word)
+{
+// Complete this method so that it decodes the encoded string
+}
+String code(String word, int SHIFT) {
+StringBuffer result = new StringBuffer();
+for (int i = 0; i < word.length(); i++) {
+char ch = word.charAt(i);
+ch = determineCharacter(ch, SHIFT); result.append(ch);
+}
+return result.toString(); }
+public char determineCharacter(char ch, final int shift) {
+if(Character.isUpperCase(ch))
+ch = (char)('A' + (ch - 'A' + shift) % Constants.WRAP_AROUND);
+// Complete the if/else so that lower case letters are accounted for
+return ch; }
+}
+Listing 2.
+
+
+In similar fashion, the class Transpose inherits Cipher and defines the methods code and encode. Listing 3 shows an incomplete definition of the class Transpose.
+
+public class Transpose extends Cipher {
+Transpose(String s) {
+super(s); }
+public String encode(String word)
+{
+StringBuffer result = new StringBuffer(word); result.reverse();
+return result.toString();
+}
+public String decode(String word) {
+// Complete this method so that it reverses the encoded string; }
+}
+Listing 3
+
+
+The class Reverser inherits the class Transpose. Listing 4 shows an incomplete definition of this
+class.
+public class Reverser extends Transpose
+{
+public Reverser(String s)
+{
+// Complete the constructor
+}
+public String reverseText(String word)
+{
+// Complete this method so that it reverses the original string
+}
+public String decode(String word)
+{
+// Complete this method so that it reverses the reversed string
+} }
+Listing 4
+
+
+Things to do
+From the above discussion complete the classes Cipher, Caesar, and Transpose, and Reverser. In addition, define an interface called Constants that will store the value 26 in the identifier WRAP_AROUND; similarly, store 3 in the identifier, ENCODE_SHIFT, and 23 in the identifier DECODE_SHIFT (needed to decode the encoded message). The code in the method determineCharacter(char ch, int shift) accounts for lower case letters only, extend the code to include both upper and lower case letters.
+
+We've done the initial coding in class but I just need someone to complete the classes and define the constants interface. Please help.
+
+------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------

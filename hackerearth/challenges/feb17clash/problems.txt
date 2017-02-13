@@ -1,0 +1,317 @@
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+Problem 1:
+Happy and Sets
+Max. Marks: 100
+Once Happy was playing with his friends during his maths class. Seeing this, his teacher asked him to solve a problem. The teacher gave him a set of n positive integers and asked him to tell the sum of the product of elements of all the possible subsets.
+
+For e.g. Say, the teacher gave him a set {2, 3, 5}.
+The possible subsets of this set are {2}, {3}, {5}, {2,3}, {2,5}, {3,5} and {2,3,5}
+
+So Happy should report the answer as the sum of 2,3,5,6{2*3},10{2*5}, 15{3*5} and 30{2*3*5}
+i.e., 71 to the teacher.
+
+As the output of the problem can be large, so the teacher asked happy to report the answer modulo
+10^9 + 7 (1000000007).
+
+INPUT:
+
+The first line of input contains an integer n denoting the number of elements in the set and the next line consists of n space separated integers. The ith integer is denoted by a_i.
+
+OUTPUT:
+
+Print the answer modulo 10^9 + 7 (1000000007).
+
+Constraints:
+
+1 ≤ n ≤ 10^5
+0 ≤ a_i ≤ 10^7
+
+SAMPLE INPUT
+3
+2 3 5
+SAMPLE OUTPUT
+71
+
+Explanation
+
+For sample input, the set consists of 3 integers 2, 3 and 5.
+The possible subsets of this set are {2}, {3}, {5}, {2, 3}, {2, 5}, {3, 5} and {2, 3, 5}.
+The product of elements of the subsets are 2, 3, 5, 6, 10, 15 and 30.
+The sum of these products is 71. So the answer is 71%(10^9+7) = 71.
+
+-------------------------------------------------------------------------------------------
+LITTLE SHINO AND EQUATION
+
+Little Shino And Equation
+Max. Marks: 100
+Little Shino is an intelligent but lazy cat.
+She measured that the distance between her and her food is d units.
+She can perform only two operations:
+    She can jump a units or b units in the direction of the food.
+    She can jump a units or b units in the direction directly opposite to the food.
+Since she is lazy, she wants to perform the minimum number of operations required to
+reach the food. But she is not smart enough to find the solution.
+Can you find it?
+
+Input Format:
+Input contains three space separated integers,
+a, b and d (1≤a,b,d≤109).
+
+Output Format:
+Print the minimum number of operations Little Shino needs to perform to reach the food. Print
+−1 if she can never reach to the food.
+
+SAMPLE INPUT
+2 3 10
+
+SAMPLE OUTPUT
+4
+
+Explanation
+a=2
+b=3
+d=10
+Little Shino can make two jumps of 2 units towards the food and two jumps of 3 units towards the food. So she will perform 4 operations.
+
+She can also make one jump of 2 units away from the food and then four jumps of
+3 units towards the food. In this case, she will perform
+5 operations, which is not the minimum.
+
+-------------------------------------------------------------------------------------------
+a c++ problem
+
+Using the following code perform ALL of the tasks below in C++:
+-------------------------------------------------------------------------------------------------------------------------------------------
+Implementation:
+Overload input operator>> a bigint in the following manner: Read in any number of digits [0-9] until a semi colon ";" is encountered. The number may span over multiple lines. You can assume the input is valid.
+Overload the operator+ so that it adds two bigint together.
+Overload the subscript operator[]. It should return the i-th digit, where i is the 10^i position. So the first digit is the one's place (10^0) and the second digit is the ten's place (10^1).
+Testing:
+Build unit test for add. There is some testing but it is very incomplete. You will need to develop better tests cases here.
+Build unit tests for subscript. There is a file for this but it has no tests.
+Make sure your input operator works. This requires you to manually inspect the output. Test with different values and ranges.
+You will need to update the Makefile - instructions are in the Makefile.
+The command make tests will build and run the unit tests.
+Create a main body, name the file add.cpp. See main.cpp (in svn/shared) as a starting point. The main reads from the file data1-1.txt and must do the following:
+Test for success of opening the file in your program.
+Read in two numbers into bigints and write both out separated by a blank line.
+Add these together and write the result.
+Then read in two more big numbers, adding them and writing the result until end of file.
+All output must be labeled and neat.
+The command make add will build and run this program.
+Code:
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Main.cpp
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+#include
+#include
+#include
+#include "Header.h"
+int main() {
+//open files
+std::ifstream inFile;
+inFile.open("dataFiles/mixed_input.txt");
+
+//check if file even opened
+if(!inFile.is_open()){
+std::cout << "File did not open.\n";
+return -1;
+}
+//stores some input data
+char i;
+inFile >> i;
+std::cout << i << "\n";
+
+while(!inFile.eof()){
+std::cout << i << "\n";
+inFile >> i;
+}
+
+BigInt bi(7925);
+std::cout << bi << std::endl;
+//bi.debug_print(std::cout);
+
+BigInt bi1 ("7925");
+std::cout << bi1 << std::endl;
+//bi1.debug_print(std::cout);
+
+//comparing bi and bi1.
+// 1 - indicates EQUAL
+// 0 - indicates UNEQUAL.
+
+bool areEqual = (bi == bi1);
+printf("\n Are bi and bi1 equal? %d\n",areEqual);
+
+BigInt bi2 (1234);
+std::cout << bi2 << std::endl;
+//bi2.debug_print(std::cout);
+
+//comparing the value after it has changed.
+areEqual = (bi == bi2);
+printf("\n Are bi and bi2 equal? %d\n",areEqual);
+
+}
+size_t strlen_(const char *s) {
+return strlen(s);
+}
+//helps debug the print
+void BigInt::debug_print(std::ostream& out) const {
+
+out << " | ";
+for(int i = MAX_DIGITS - 1; i >= 0; --i)
+out << digit[i] << " | ";
+}
+//default
+BigInt::BigInt():digit(){
+
+}
+//takes integer
+BigInt::BigInt(int value){
+
+//initialize all array elements to 0
+int x = 0;
+while (x < MAX_DIGITS) {
+digit[x] = 0;
+x++;
+}
+
+int i = 0;
+while (value > 0){
+i = i * 10 + (value % 10);
+value /= 10;
+}
+
+//store the input into array
+for (int x = 0; x <= MAX_DIGITS; ++x) {
+digit[x] = i % 10;
+i /= 10;
+}
+}
+//takes char value
+BigInt::BigInt(const char *value){
+
+//initialize all array elements to 0
+int x = 0;
+while (x < MAX_DIGITS) {
+digit[x] = 0;
+x++;
+}
+
+//initialize size variable so it has number of digits in input.
+size = strlen_(value);
+
+//convert the character array to integer array and store the same value to it.
+for(int i = 0; i < size; ++i){
+this->digit[i] = *value - '0';
+++value;
+}
+}
+//overload operator== to compare
+bool operator==(const BigInt &rhs , const BigInt &lhs){
+
+//check to see if size of both inputs are equal, if not, it returns false.
+if(lhs.size != rhs.size)
+return false;
+
+//compare every value.
+for(int i = 0; i < lhs.size; i++){
+if (lhs.digit[i] != rhs.digit[i])
+return false;
+}
+return true;
+}
+//overload operator<<
+std::ostream &operator<<(std::ostream & out, const BigInt & bi){
+
+//return each index value to the out stream
+for(int i = 0; i < bi.size; ++i )
+out << bi.digit[i];
+
+return(out);
+}
+//overload operator>>
+std::istream &operator>>(std::istream & in, const BigInt & bi){
+}
+//overload operator+
+BigInt operator+(const BigInt & rhs)const{
+return lhs + rhs;
+}
+//overload operator[]
+int BigInt::operator[](const BigInt &bi){
+//10^0 represents the ones place in the number and [0] in the array and so on
+return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Header.h
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#ifndef Header_h
+#define Header_h
+const int MAX_DIGITS = 500;
+class BigInt {
+
+private:
+//array contains the BigInt.
+int digit[MAX_DIGITS];
+int size;
+
+public:
+//default constructor
+BigInt();
+
+//constructor that takes integer.
+BigInt(int value);
+
+//constructor that takes character array.
+BigInt(const char *value);
+
+//debug code
+void debug_print(std::ostream& out) const;
+
+// overloaded <<, ==, >>, +, []friend functions.
+friend std::ostream &operator<<(std::ostream &out, const BigInt &bi);
+friend std::istream &operator>>(std::istream &in, const BigInt &bi);
+friend bool operator==(const BigInt &rhs, const BigInt &lhs);
+int operator[](const BigInt &bi);
+BigInt operator+(BigInt & rhs)const;
+};
+#endif /* Header_h */
+-------------------------------------------------------------------------------------------
+Write a program in C++ where you keep reading strings from the input.
+And then:
+    if the number of characters is three or less,
+            you will store the string in a vector;
+    else if the number of characters is more than three,
+            you will first remove from it all occurrences of the strings stored in your vector,
+    and then you will output the string.
+    Stop when string "quit" is read.
+    String "quit" should not be processed.
+
+Sample Input:
+air
+de
+op
+cat
+desktop
+airplane
+in
+oo
+catintheroof
+quit
+
+Sample Output:
+skt
+plane
+therf
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
