@@ -1,0 +1,300 @@
+================================================================================================================================================================================================================================================
+================================================================================================================================================================================================================================================
+Question 1:
+
+Question1Max. Marks 100.00
+Optimization Game
+Currently, Monk is playing a unique kind of strategy game called optimisation game. In this game we are provided with an array containing integral numbers. Now all these numbers represent the count of their respective index power of
+2. The goal of the game is to minimize the total sum of the count of the array by converting lower powers of 2 into their higher powers i.e. for example (2) 2**1 =(1) 2**2. Note that we can extend the array beyond the final index i.e. N−1 too in case it optimizes our result. Please see the below example for more understanding.
+
+Let the number of elements given in the initial array be 3.
+Consider the array to be [1,2,0].
+It means that
+2**0 has count = 1,
+2**1 has count = 2,
+2**2 has count = 0.
+
+Now, we can convert
+(2) * 2**1 into (1) 2**2 as 2**1∗2=2**2.
+We get the new array as [1,0,1]. Now the total sum is 1+0+1=2 which is the required minimum value obtained at the end of the game as we can't reduce it any further.
+
+Input:
+
+First line will contain the number of test cases as T.
+For each of the test case, N will be given in the first line and N integers will be given in the second line.
+
+Output:
+
+Output the minimum value obtained after playing the optimization game in a separate line for each test case.
+
+Constraint:
+
+1≤T≤5
+
+1≤N≤105
+
+0≤A[i]≤2∗109
+
+Sample Input
+2
+3
+1 2 1
+2
+2 1
+
+Sample Output
+2
+1
+
+Explanation
+In the second case we have A[0]=2,A[1]=1.
+
+We can convert
+(2) A[0] into (1) A[1]
+and then finally (1+1=2) A[1] into (1) A[2].
+
+Thus, the final array shall be : [0,0,1]. Hence, the answer is 1.
+
+
+================================================================================================================================================================================================================================================
+================================================================================================================================================================================================================================================
+
+
+Question2
+Max. Marks 100.00
+Sum of sum of digits
+Monk likes math problems very much. His math teacher taught him about sum of digits of a number. He decided to experiment a little with them.
+
+Given a number, he recursively finds the sum of its digits till it becomes a single digit number. He calls this as Digit-Value of a number "
+
+It can be written as :
+
+sumOfDigits(n):
+    if n is a single digit number:
+        return n
+    else:
+        x = sum of the digits of n
+        return sumOfDigits(x)
+
+After seeing his interest in this concept, his teacher gave him an interesting problem, that uses the above function defined by him. She gave him an array A of N different numbers. Then she asks him Q queries. In each query, he has to form a set of
+K numbers from the array and find the sum of Digit-Values of those
+K numbers. This sum is called the value of that set.
+
+The queries are of the following type :
+1 K : Monk must output the maximum value of a set of size K, that can be obtained, as described above.
+
+2 K : Monk must output the minimum value of a set of size K, that can be obtained, as described above.
+
+Monk needs your help to complete this task.
+
+Input :
+
+The first line of input contains two space-separated integers N and Q, denoting the number of numbers in the list given by the teacher and the number of queries, respectively. The second line contains N space separated numbers, denoting the array A given by the teacher. The next Q lines contain two space separated integers each, first one to define query type(1 or 2) and second is K, the size of the set to be formed.
+
+Output:
+
+Output contains Q lines. Each of these lines contains an integer that denotes the answer to the ith query.
+
+Constraints
+
+1≤N≤105
+1≤Q≤105
+1≤Ai≤1018
+1≤K≤N
+
+Sample Input
+5 5
+13 345 193 44444 100303
+1 2
+1 4
+2 1
+2 4
+1 5
+
+Sample Output
+11
+18
+2
+13
+20
+
+Explanation
+The array elements constituting a part of the first 3 queries are :
+
+1. (13,100303)
+
+2. (13,345,193,100303)
+
+3. (44444)
+
+The answer for the rest of the queries can be constructed in a similar manner.
+
+Time Limit: 1.0 sec(s) for each input file
+Memory Limit: 256 MB
+Source Limit: 1024 KB
+Marking Scheme: Marks are awarded if any testcase passes
+Allowed Languages: C, C++, Clojure, C#, D, Erlang, F#, Go, Groovy, Haskell, Java, Java 8, JavaScript(Rhino), JavaScript(Node.js), Lisp, Lisp (SBCL), Lua, Objective-C, OCaml, Octave, Pascal, Perl, PHP, Python, Python 3, R(RScript), Racket, Ruby, Rust, Scala, Scala 2.11.8, Swift, Visual Basic
+
+
+
+================================================================================================================================================================================================================================================
+================================================================================================================================================================================================================================================
+
+Question3
+Max. Marks 100.00
+Cross the street
+ABC Company is involved in the logistics business.
+
+The company has many outlets and stockyards in a city. The city is like an N×M grid. We consider a single cell of the given grid to be a single block in the city. The stockyard is at the upper-left corner and the outlet is located in the lower right corner. Everyday, one of the employees has to travel from the upper left to the lower right corner for supplies. Each block in the city has a height, where the height of the block located at position (i,j) in the grid is equal to
+A[i][j]. The company wants to change the heights of some of the blocks, so that the employee can enjoy a high-speed drive from the stockyard to the outlet. But this change comes at a certain cost.
+
+Specifically, if they change a block height from x to y, then they must pay exactly |x−y| dollars. Please help them find the minimum cost, such that by spending that specific amount, they can get a path from stockyard to the outlet with all blocks along the path having the same height.
+
+In a single move, the employee can move from a block to any of its adjacent blocks. Note that during this journey, the employee is allowed to move in all four directions, fulfilling the condition that he never goes out of the grid at any point in time.
+
+Input :
+
+First line contains two positive integers N and M - number of rows and columns in the city. Then, N lines follow, each containing M integers, where the jth integer on the ith line denotes A[i][j].
+
+Output :
+
+The first and only line of output should contain minimum cost.
+
+Constraints :
+
+1<= N, M <=100
+
+1<= height of blocks <=100
+
+Sample Input
+5 5
+1 1 1 1 1
+9 9 9 9 1
+1 3 3 3 1
+1 9 9 9 9
+1 1 1 1 1
+
+Sample Output
+6
+
+Explanation
+Optimal path taken by the employee will be :
+(1,1) -> (1,2) -> (1,3) -> (1,4) -> (1,5) -> (2,5) -> (3,5) -> (3,4) -> (3,3) -> (3,2) -> (3,1) -> (4,1) -> (5,1) -> (5,2) -> (5,3) -> (5,4) -> (5,5)
+The height of each block along this path can be changed to 1, at a total cost of 6. There is no way to get a cost less than this.
+
+Time Limit: 1.0 sec(s) for each input file
+Memory Limit: 256 MB
+Source Limit: 1024 KB
+Marking Scheme: Marks are awarded if any testcase passes
+Allowed Languages: C, C++, Clojure, C#, D, Erlang, F#, Go, Groovy, Haskell, Java, Java 8, JavaScript(Rhino), JavaScript(Node.js), Lisp, Lisp (SBCL), Lua, Objective-C, OCaml, Octave, Pascal, Perl, PHP, Python, Python 3, R(RScript), Racket, Ruby, Rust, Scala, Scala 2.11.8, Swift, Visual Basic
+
+================================================================================================================================================================================================================================================
+================================================================================================================================================================================================================================================
+================================================================================================================================================================================================================================================
+                            ACCOLITE QUESTIONS
+================================================================================================================================================================================================================================================
+Question2Max. Marks 100.00
+Vowel Phelia
+
+Alice and Bob are playing a game in which Bob gives a string S of length N
+consisting of lowercase English alphabets to Alice and ask her to calculate
+the number of sub-strings of this string which contains exactly 3 vowels.
+
+There will be
+T test cases in the input and output the answer for each test case in a new line.
+
+Sample Input:
+
+The first line contains a single integer T.
+Each test case will consist of two lines,
+first line containing length of string and second line will contain the string.
+
+Sample Output:
+
+Print the answer for each test case in a new line.
+
+Constraints:
+
+1≤T≤20
+
+1≤N≤105
+
+Sample Input
+1
+5
+aebco
+
+Sample Output
+1
+
+Explanation
+Only one substring is possible which is given by aebco.
+
+Time Limit: 5.0 sec(s) for each input file
+Memory Limit: 256 MB
+Source Limit: 1024 KB
+Marking Scheme: Marks are awarded if any testcase passes
+Allowed Languages: Java, Java 8
+
+
+
+================================================================================================================================================================================================================================================
+================================================================================================================================================================================================================================================
+
+
+Question3Max. Marks 100.00
+Sum of Digits
+You are given an array of N distinct numbers. Now, we call the Digit Value of a number to be the sum of its digits..
+
+Now, a subset is a set of not-necessarily-contiguous array elements. We call the value of a set to be the the maximum over the Digit Value of all elements it contains.
+
+Now, you need to find the summation of the values of all 2^N−1 non-empty subsets of this array.
+As the answer can be rather large, print it Modulo 10^9+7. Can you do it ?
+
+Input Format :
+
+The first line contains a single integer N. The next line contains N space separated integers, where the ith integer denotes A[i].
+
+Output Format :
+
+Print the summation of the value of each non-empty subset of the given array Modulo 10^9+7.
+
+Constraints :
+
+
+1≤N≤105
+
+0≤A[i]≤1018
+
+Sample Input
+3
+10 20 30
+
+Sample Output
+17
+
+Explanation
+The subsets of this array and their values are :
+
+(10) : 1
+
+(20) : 2
+
+(30) : 3
+
+(10,20) : 2
+
+(10, 30) : 3
+
+(20,30) : 3
+
+(10,20,30 ) : 3
+
+Thus, the final answer is
+(1+2+3+2+3+3+3) = 17
+
+Time Limit: 1.0 sec(s) for each input file
+Memory Limit: 256 MB
+Source Limit: 1024 KB
+Marking Scheme: Marks are awarded if any testcase passes
+Allowed Languages: Java, Java 8
