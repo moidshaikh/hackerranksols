@@ -35,8 +35,6 @@ markers = ['#', '!']
 
 
 
-for line in lines: 
-    if 
 
 
 
