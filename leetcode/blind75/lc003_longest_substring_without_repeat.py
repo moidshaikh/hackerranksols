@@ -13,21 +13,19 @@ class Solution:
         # # print(f"final: {lss}")
         # return len(lss)
 
-        
         # Sliding window. Timecomplexity: O(n)
         subs = set()
-        l, res = 0,0
-        
+        l, res = 0, 0
+
         for r in range(len(s)):
             while s[r] in subs:
                 subs.remove(s[l])
                 l += 1
             subs.add(s[r])
-            res = max(res,r-l+1)
+            res = max(res, r - l + 1)
         return res
-
 
 
 s = Solution()
 
-print(s.lengthOfLongestSubstring('abcabcbb'))
+print(s.lengthOfLongestSubstring("abcabcbb"))

@@ -1,7 +1,9 @@
 from typing import List
+
+
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        sorted_strs = [''.join(sorted(list(x))) for x in strs]
+        sorted_strs = ["".join(sorted(list(x))) for x in strs]
         # print(sorted_strs)
         res = {}
         for i, s in enumerate(sorted_strs):
@@ -14,5 +16,6 @@ class Solution:
         # print(res)
         return list(res.values())
 
+
 s = Solution()
-print(s.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+print(s.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
